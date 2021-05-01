@@ -1,18 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Weather</title>
-</head>
-<body>
-    <header>
-        
+  </head>
+
+  <body>
+    <header class="py-5 w-100">
+      <div class="container header-content">
+        <div class="logo">
+          <a href="" class="d-flex"> <i class="fas fa-cloud"></i> </a>
+        </div>
+
+        <div class="header-navs">
+          <ul>
+            <li><a href="" class="mx-3 px-3 py-1">Home</a></li>
+            <li><a href="" class="mx-3 px-3 py-1">News</a></li>
+            <li><a href="" class="mx-3 px-3 py-1">Live cameras</a></li>
+            <li><a href="" class="mx-3 px-3 py-1">Photos</a></li>
+            <li><a href="" class="mx-3 px-3 py-1">Contact</a></li>
+          </ul>
+        </div>
+      </div>
     </header>
 
+    <section class="content">
+      <div class="container py-5">
+        <form action="" class="position-relative">
+          <input type="text"placeholder="Find your location"class="form-control search-input py-"/>
+          <input type="button"value="Find" id="Submit" class="btn btn-primary"/>
+        </form>
+      </div>
+
+      <div class="container text-center pb-5">
+        <div class="row">
+          <div class="col-md-4 hiii">
+            <div class="temps-content">
+              <div class="date py-1 d-flex justify-content-between">
+                <p>Firday</p>
+                <p>30April</p>
+              </div>
+
+              <div class="temps-upper-content my-2 haa">
+                <p>cairo</p>
+                <h2>38oC</h2>
+              </div>
+
+              <div class="temps-lower-content">
+                <p>Sunny</p>
+
+                <div class="d-flex justify-content-around details">
+                  <i class="fas fa-wind"></i>
+                  <i class="fas fa-wind"></i>
+                  <i class="fas fa-wind"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 hiii aspf">
+            <div class="temps-content"></div>
+          </div>
+
+          <div class="col-md-4 hiii">
+            <div class="temps-content"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <script src="js/main.js"></script>
-</body>
+  </body>
 </html>
