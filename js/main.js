@@ -17,7 +17,6 @@ async function getTemps(keyWord) {
     // Ajax start
     let tempsRespo = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=a62b8c0df5ed46f8a1f123311210205&q=${keyWord}&days=3&aqi=no&alerts=no`);
     let myRespo = await tempsRespo.json();
-    console.log(myRespo)
     $("#foreCastIcon").html (`<img src = "http:${myRespo.current.condition.icon}" alt="icon" class"foreCastIcon">`)
     $("#condition").html (myRespo.current.condition.text)
     $("#humidity").html (` ${myRespo.current.humidity}%`)
