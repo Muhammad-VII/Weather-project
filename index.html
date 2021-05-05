@@ -1,79 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/all.min.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <title>Weather</title>
-  </head>
 
-  <body>
-    <header class="py-5 w-100">
-      <div class="container header-content">
-        <div class="logo">
-          <a href="" class="d-flex"> <i class="fas fa-cloud"></i> </a>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>Weather</title>
+</head>
 
-        <div class="header-navs">
-          <ul>
-            <li><a href="" class="mx-3 px-3 py-1">Home</a></li>
-            <li><a href="" class="mx-3 px-3 py-1">News</a></li>
-            <li><a href="" class="mx-3 px-3 py-1">Live cameras</a></li>
-            <li><a href="" class="mx-3 px-3 py-1">Photos</a></li>
-            <li><a href="" class="mx-3 px-3 py-1">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-    </header>
-
-    <section class="content">
-      <div class="container py-5">
-        <form action="" class="position-relative">
-          <input type="text"placeholder="Find your location"class="form-control search-input py-"/>
-          <input type="button"value="Find" id="Submit" class="btn btn-primary"/>
-        </form>
+<body>
+  <!--Nav bar-->
+  <header class="py-4 w-100" id="demo4">
+    <div class="container main">
+      <div class="logo">
+        <a href="" class=""> <i class="fas fa-cloud"></i> </a>
       </div>
 
-      <div class="container text-center pb-5">
-        <div class="row">
-          <div class="col-md-4 hiii">
-            <div class="temps-content">
-              <div class="date py-1 d-flex justify-content-between">
-                <p>Firday</p>
-                <p>30April</p>
-              </div>
+      <div class="header-navs my-4">
+        <ul>
+          <li><a href="" class="mx-3 px-3 py-1">Home</a></li>
+          <li><a href="" class="mx-3 px-3 py-1">News</a></li>
+          <li><a href="" class="mx-3 px-3 py-1">Live cameras</a></li>
+          <li><a href="" class="mx-3 px-3 py-1">Photos</a></li>
+          <li><a href="" class="mx-3 px-3 py-1">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
 
-              <div class="temps-upper-content my-2 haa">
-                <p>cairo</p>
-                <h2>38oC</h2>
-              </div>
+  <!--Main section-->
+  <section class="header-content">
+    <div class="container py-5">
+      <form action="" class="position-relative">
+        <input type="text" placeholder="Find your location" class="form-control search-input" id="search" onkeydown="getTemps(this.value)"/>
+        <input type="button" value="Find" id="Submit" class="btn btn-primary" />
+      </form>
+    </div>
 
-              <div class="temps-lower-content">
-                <p>Sunny</p>
+    <!--Temps-->
+    <div class="container wrapper">
+      <div class="row">
+        <div class="col-md-4 today-sec" id="demo">
+          <div class="d-flex justify-content-between date-sec-1 px-2">
+            <p id="today"></p>
+            <p id="dayDate"></p>
+          </div>
 
-                <div class="d-flex justify-content-around details">
-                  <i class="fas fa-wind"></i>
-                  <i class="fas fa-wind"></i>
-                  <i class="fas fa-wind"></i>
+          <div class="container">
+            <div class="main-temp text-left">
+              <div class="temp1">
+                <h5 class="pt-4" id="Capital"></h5>
+                <div class="temp-wrapper d-flex align-items-center justify-content-between">
+                  <h3 class="today-temp mr-2 position-relative" id="todayTemp"></h3>
+                  <div id="foreCastIcon">
+
+                  </div>
                 </div>
+              </div>
+              <div class="py-3 icons">
+                <h6 class="text-info py-1" id="condition"></h6>
+                <i class="fas fa-umbrella px-1" id="humidity"></i>
+                <i class="fas fa-wind px-3" id="airCon"></i>
+                <i class="far fa-compass pl-1" id="windDir"></i>
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="col-md-4 hiii aspf">
-            <div class="temps-content"></div>
+
+        <div class="col-md-4 next-day-sec" id="demo2">
+          <div class="text-center date-sec-2">
+            <p id="nextDay"></p>
           </div>
+          <div class="main-temp">
+            <div class="temp py-5 mt-4">
+              <div id="nextDayIcon"></div>
+              <h3 id="nextDayMaxTemp" class="position-relative text-white"></h3>
+              <small id="nextDayMinTemp"></small>
+              <h6 class="text-info py-3" id="nextDayCon"></h6>
+            </div>
+          </div>
+        </div>
 
-          <div class="col-md-4 hiii">
-            <div class="temps-content"></div>
+        <div class="col-md-4 after-tom-sec" id="demo3">
+          <div class="text-center date-sec-3">
+            <p id="dayAfter"></p>
+          </div>
+          <div class="main-temp">
+            <div class="temp py-5 mt-4">
+              <div id="dayAfterIcon"></div>
+              <h3 id="dayAfterMaxTemp" class="text-white"> </h3>
+              <small id="dayAfterMinTemp"></small>
+              <h6 class="text-info py-3" id="dayAfterCon"></h6>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+  </section>
 
-    <script src="js/main.js"></script>
-  </body>
+  <!--Start footer-->
+  <footer class="mt-5">
+    <div class="container">
+      <div class="container d-flex justify-content-between footer-content">
+
+        <form action="" class="position-relative">
+          <input type="text" placeholder="Enter your email to subscribe" class="form-control" id="subInput" />
+          <input type="button" value="Subscribe" id="Sub" class="btn btn-primary px-5" />
+        </form>
+
+        <div class="social-links pl-4 w-25">
+         <a href=""> <i class="fab fa-facebook-f px-2"></i> </a>
+         <a href=""> <i class="fab fa-twitter px-2"></i> </a>
+         <a href=""> <i class="fab fa-google-plus-g px-2"></i> </a>
+         <a href=""> <i class="fab fa-pinterest px-2"></i> </a>
+        </div>
+      </div>
+      <p class="pl-3">Copyright 2014 Company name. Designed by Themezy. All rights reserved</p>
+    </div>
+  </footer>
+  <!--End footer-->
+
+  <script src="js/jquery-3.6.0.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
 </html>
