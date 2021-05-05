@@ -18,21 +18,21 @@ async function getTemps(keyWord) {
     let tempsRespo = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=a62b8c0df5ed46f8a1f123311210205&q=${keyWord}&days=3&aqi=no&alerts=no`);
     let myRespo = await tempsRespo.json();
     console.log(myRespo)
-    document.getElementById("foreCastIcon").innerHTML = `<img src = "http:${myRespo.current.condition.icon}" alt="icon" class"foreCastIcon">`
-    document.getElementById("condition").innerHTML = myRespo.current.condition.text
-    document.getElementById("humidity").innerHTML = ` ${myRespo.current.humidity}%`
-    document.getElementById("airCon").innerHTML = ` ${Math.floor(myRespo.current.wind_kph)} km/h`
-    document.getElementById("windDir").innerHTML = ` ${myRespo.current.wind_dir}`
-    document.getElementById("nextDayMaxTemp").innerHTML = `${myRespo.forecast.forecastday[1].day.maxtemp_c}&#8451;`
-    document.getElementById("nextDayMinTemp").innerHTML = `${myRespo.forecast.forecastday[1].day.mintemp_c}&#8451;`
-    document.getElementById("dayAfterMaxTemp").innerHTML = `${myRespo.forecast.forecastday[2].day.maxtemp_c}&#8451;`
-    document.getElementById("dayAfterMinTemp").innerHTML = `${myRespo.forecast.forecastday[2].day.mintemp_c}&#8451;`
-    document.getElementById("dayAfterIcon").innerHTML = `<img src = "http:${myRespo.forecast.forecastday[2].day.condition.icon}" alt="icon">`
-    document.getElementById("nextDayIcon").innerHTML = `<img src = "http:${myRespo.forecast.forecastday[1].day.condition.icon}" alt="icon">`
-    document.getElementById("nextDayCon").innerHTML = myRespo.forecast.forecastday[1].day.condition.text;
-    document.getElementById("dayAfterCon").innerHTML = myRespo.forecast.forecastday[2].day.condition.text;
-    document.getElementById("Capital").innerHTML = myRespo.location.name
-    document.getElementById("todayTemp").innerHTML = `${myRespo.current.temp_c}&#8451;`
+    $("#foreCastIcon").html (`<img src = "http:${myRespo.current.condition.icon}" alt="icon" class"foreCastIcon">`)
+    $("#condition").html (myRespo.current.condition.text)
+    $("#humidity").html (` ${myRespo.current.humidity}%`)
+    $("#airCon").html (` ${Math.floor(myRespo.current.wind_kph)} km/h`)
+    $("#windDir").html (` ${myRespo.current.wind_dir}`)
+    $("#nextDayMaxTemp").html (`${myRespo.forecast.forecastday[1].day.maxtemp_c}&#8451;`)
+    $("#nextDayMinTemp").html (`${myRespo.forecast.forecastday[1].day.mintemp_c}&#8451;`)
+    $("#dayAfterMaxTemp").html (`${myRespo.forecast.forecastday[2].day.maxtemp_c}&#8451;`)
+    $("#dayAfterMinTemp").html (`${myRespo.forecast.forecastday[2].day.mintemp_c}&#8451;`)
+    $("#dayAfterIcon").html (`<img src = "http:${myRespo.forecast.forecastday[2].day.condition.icon}" alt="icon">`)
+    $("#nextDayIcon").html(`<img src = "http:${myRespo.forecast.forecastday[1].day.condition.icon}" alt="icon">`)
+    $("#nextDayCon").html(myRespo.forecast.forecastday[1].day.condition.text);
+    $("#dayAfterCon").html(myRespo.forecast.forecastday[2].day.condition.text);
+    $("#Capital").html (myRespo.location.name)
+    $("#todayTemp").html(`${myRespo.current.temp_c}&#8451;`)
     // Ajax end
 }
 getTemps('Cairo');
