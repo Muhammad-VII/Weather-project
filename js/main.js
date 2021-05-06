@@ -35,3 +35,10 @@ async function getTemps(keyWord) {
     // Ajax end
 }
 getTemps('Cairo');
+
+(function(){
+    $('.header-navs li').on("click", "a", function(){
+        $(this).addClass('active')
+        
+    })
+})()

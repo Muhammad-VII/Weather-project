@@ -307,3 +307,14 @@ footer form {
     padding: 0px 5px;
   }
 }
+
+.active{
+  color: #09c !important;
+  background-color: rgba(0, 76, 138, 0.15);
+  border-radius: 20px;
+  border: #009ad8 2px solid;
+}
+.active:hover{
+  background-color: rgba(0, 90, 163, 0.616);
+  color: rgba(255, 255, 255, 0.904) !important;
+}

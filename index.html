@@ -21,15 +21,28 @@
 
       <div class="header-navs my-4">
         <ul>
-          <li><a href="" class="mx-3 px-3 py-1">Home</a></li>
-          <li><a href="" class="mx-3 px-3 py-1">News</a></li>
-          <li><a href="" class="mx-3 px-3 py-1">Live cameras</a></li>
-          <li><a href="" class="mx-3 px-3 py-1">Photos</a></li>
-          <li><a href="" class="mx-3 px-3 py-1">Contact</a></li>
+          <li><a href="index.html" class="mx-3 px-3 py-1 active">Home</a></li>
+          <li><a href="#" class="mx-3 px-3 py-1">News</a></li>
+          <li><a href="#" class="mx-3 px-3 py-1">Live cameras</a></li>
+          <li><a href="#" class="mx-3 px-3 py-1">Photos</a></li>
+          <li><a href="#" class="mx-3 px-3 py-1">Contact</a></li>
         </ul>
       </div>
     </div>
   </header>
+
+  <script>
+    // $(function() {
+    //    $('#header-navs li a').click(function() {
+    //       $('#header-navs li').removeClass();
+    //       $($(this).attr('class')).addClass('active');
+    //    });
+    // });
+
+    $('.header-navs li').click(function(){
+      $('.header-navs li a').addClass('active')
+    })
+ </script>
 
   <!--Main section-->
   <section class="header-content">
