@@ -34,7 +34,7 @@ async function getTemps(keyWord) {
     $("#todayTemp").html(`${myRespo.current.temp_c}&#8451;`)
     // Ajax end
 }
-getTemps('Cairo');
+getTemps('Mecca');
 
 (function(){
     $('.header-navs li').on("click", "a", function(){

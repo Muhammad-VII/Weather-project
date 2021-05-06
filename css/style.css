@@ -14,16 +14,12 @@ html {
 body {
   color: #bfc1c8;
   font-family: "Roboto", "Open Sans", sans-serif;
-  /* font-size: 14px;
-  font-weight: 300;
-  line-height: 1.5; */
   background: #1e202b;
 }
 
 ul {
   list-style: none;
 }
-
 /* End global rules*/
 
 /* start header */
